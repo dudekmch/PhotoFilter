@@ -9,9 +9,11 @@
 import UIKit
 
 protocol TakeAPhotoPresentationLogic {
+
 }
 
 class TakeAPhotoPresenter: TakeAPhotoPresentationLogic {
     weak var viewController: TakeAPhotoDisplayLogic?
+
     
 }

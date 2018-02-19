@@ -92,11 +92,16 @@ class TakeAPhotoViewController: UIViewController, TakeAPhotoDisplayLogic, TakeAP
         interfaceBuilder.setupAutolayout()
         
         takeAPhotoButton.addTarget(self, action: #selector(takeAPhoto), for: .touchUpInside)
+        
     }
     
     @objc private func takeAPhoto() {
-        let request = TakeAPhoto.CaptureImage.Request()
-        interactor?.captureImage(request)
+        self.showAddFlterScene()
+       
+    }
+    
+    private func showAddFlterScene() {
+        router?.routeToAddFilterScene()
     }
     
 }

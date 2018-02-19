@@ -9,7 +9,7 @@
 import UIKit
 
 @objc protocol TakeAPhotoRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToAddFilterScene()
 }
 
 protocol TakeAPhotoDataPassing {
@@ -21,6 +21,16 @@ class TakeAPhotoRouter: NSObject, TakeAPhotoRoutingLogic, TakeAPhotoDataPassing 
     var dataStore: TakeAPhotoDataStore?
     
     // MARK: Routing
+    
+    func routeToAddFilterScene() {
+        let con = AddFilterViewController()
+        
+        // con.router.database.images = self.datastore.images
+        
+        self.viewController?.show(con, sender: nil)
+    }
+    
+    
     
     //func routeToSomewhere(segue: UIStoryboardSegue?)
     //{

@@ -31,6 +31,7 @@
 		F447D5752033911C008FFBA0 /* AddFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447D56F2033911C008FFBA0 /* AddFilterViewController.swift */; };
 		F447D5762033911C008FFBA0 /* AddFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447D5702033911C008FFBA0 /* AddFilterInteractor.swift */; };
 		F447D5782035FEA6008FFBA0 /* AddFilterInterfaceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447D5772035FEA6008FFBA0 /* AddFilterInterfaceBuilder.swift */; };
+		F447D57E20373F18008FFBA0 /* FiltersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F447D57D20373F18008FFBA0 /* FiltersCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		F447D56F2033911C008FFBA0 /* AddFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFilterViewController.swift; sourceTree = "<group>"; };
 		F447D5702033911C008FFBA0 /* AddFilterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFilterInteractor.swift; sourceTree = "<group>"; };
 		F447D5772035FEA6008FFBA0 /* AddFilterInterfaceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFilterInterfaceBuilder.swift; sourceTree = "<group>"; };
+		F447D57D20373F18008FFBA0 /* FiltersCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				F447D56F2033911C008FFBA0 /* AddFilterViewController.swift */,
 				F447D5702033911C008FFBA0 /* AddFilterInteractor.swift */,
 				F447D5772035FEA6008FFBA0 /* AddFilterInterfaceBuilder.swift */,
+				F447D57D20373F18008FFBA0 /* FiltersCollectionViewController.swift */,
 			);
 			path = AddFilter;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				F447D5712033911C008FFBA0 /* AddFilterPresenter.swift in Sources */,
 				F447D56820322559008FFBA0 /* CameraService.swift in Sources */,
 				F447D5722033911C008FFBA0 /* AddFilterWorker.swift in Sources */,
+				F447D57E20373F18008FFBA0 /* FiltersCollectionViewController.swift in Sources */,
 				F447D5782035FEA6008FFBA0 /* AddFilterInterfaceBuilder.swift in Sources */,
 				F447D56020321594008FFBA0 /* TakeAPhotoInterfaceBuilder.swift in Sources */,
 				F447D55B20321412008FFBA0 /* TakeAPhotoRouter.swift in Sources */,

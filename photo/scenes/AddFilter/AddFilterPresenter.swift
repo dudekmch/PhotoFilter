@@ -1,15 +1,6 @@
-//
-//  AddFilterPresenter.swift
-//  photo
-//
-//  Created by Pawel Dudek on 13.02.2018.
-//  Copyright (c) 2018 cookieIT. All rights reserved.
-//
-
 import UIKit
 
 protocol AddFilterPresentationLogic {
-    func presentSomething(response: AddFilter.Something.Response)
 }
 
 class AddFilterPresenter: AddFilterPresentationLogic {
@@ -17,8 +8,7 @@ class AddFilterPresenter: AddFilterPresentationLogic {
     
     // MARK: Do something
     
-    func presentSomething(response: AddFilter.Something.Response) {
-        let viewModel = AddFilter.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentSomething(response: AddFilter.Photos.Response) {
+        let viewModel = AddFilter.Photos.ViewModel()
     }
 }

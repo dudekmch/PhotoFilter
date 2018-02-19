@@ -2,7 +2,6 @@
 import UIKit
 
 protocol AddFilterBusinessLogic {
-    func getPhotos(request: AddFilter.Photos.Request)
 }
 
 protocol AddFilterDataStore {
@@ -21,6 +20,5 @@ class AddFilterInteractor: AddFilterBusinessLogic, AddFilterDataStore {
         worker?.doSomeWork()
         
         let response = AddFilter.Photos.Response()
-        presenter?.presentSomething(response: response)
     }
 }
