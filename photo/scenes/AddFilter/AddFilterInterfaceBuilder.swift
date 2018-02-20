@@ -29,11 +29,11 @@ class AddFilterInterfaceBuilder: AddFilterViewProvider {
         let collectionView = UICollectionView.init(frame: cg, collectionViewLayout: layaut)
 
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .red
+        collectionView.backgroundColor = .black
+          collectionView.addShadow()
         view.addSubview(collectionView)
-        collectionView.didMoveToSuperview()
-        collectionView.addShadow()
-
+//       collectionView.didMoveToSuperview()
+      
         return collectionView
     }
 

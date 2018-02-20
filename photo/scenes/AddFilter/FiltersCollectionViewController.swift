@@ -1,7 +1,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "filterCell"
 
 protocol FiltersDisplayLogic: class {
 }
@@ -13,7 +13,6 @@ class FiltersCollectionViewController: UICollectionViewController, FiltersDispla
     override func loadView() {
         let layaut = UICollectionViewFlowLayout()
         layaut.scrollDirection = UICollectionViewScrollDirection.horizontal
-//        self.view = collectionView
         self.collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layaut)
         self.delgate?.filtersCollectionView = self.collectionView
     }

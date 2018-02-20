@@ -1,5 +1,7 @@
 import UIKit
 
+private let reuseIdentifier = "photoCell"
+
 protocol FiltersHandler {
     func didSelect(_ filter: Any)
     var filtersCollectionView: UICollectionView? {get set}
@@ -62,6 +64,11 @@ class AddFilterViewController: UIViewController, AddFilterDisplayLogic, AddFilte
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let collectionView = photosCollectionView {
+            collectionView.dataSource = self
+            collectionView.delegate = self
+//            collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        }
     }
     
     private func buildInterface(){
@@ -75,4 +82,18 @@ class AddFilterViewController: UIViewController, AddFilterDisplayLogic, AddFilte
     
     func didSelect(_ filter: Any){}
     
+}
+
+extension AddFilterViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cg = CGRect(x: 0, y: 0, width:  UIScreen.main.bounds.width, height: 40)
+        let cell = UICollectionViewCell.init(frame: cg)
+        cell.backgroundColor = .white
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 8
+    }
 }
