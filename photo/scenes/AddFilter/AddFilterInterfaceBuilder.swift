@@ -25,7 +25,8 @@ class AddFilterInterfaceBuilder: AddFilterViewProvider {
     func buildCollectionView() -> UICollectionView {
 
         let cg = CGRect(x: 0, y: 0, width:  UIScreen.main.bounds.width, height: 300)
-        let layaut = UICollectionViewLayout()
+        let layaut = UICollectionViewFlowLayout()
+        layaut.scrollDirection = UICollectionViewScrollDirection.horizontal
         let collectionView = UICollectionView.init(frame: cg, collectionViewLayout: layaut)
 
         collectionView.translatesAutoresizingMaskIntoConstraints = false

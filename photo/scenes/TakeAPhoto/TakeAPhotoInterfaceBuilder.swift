@@ -16,7 +16,8 @@ class TakeAPhotoInterfaceBuilder: TakeAPhotoViewProvider {
         self.controller = controller as! (UIViewController & TakeAPhotoViewHandler)
     }
     
-    private unowned let controller: UIViewController & TakeAPhotoViewHandler
+    private let controller: UIViewController & TakeAPhotoViewHandler
+    
     private var view: UIView {
         return controller.view
     }
