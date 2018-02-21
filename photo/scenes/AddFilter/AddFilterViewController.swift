@@ -68,6 +68,18 @@ class AddFilterViewController: UIViewController, AddFilterDisplayLogic, AddFilte
             collectionView.dataSource = self
             collectionView.delegate = self
             collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+            collectionView.showsHorizontalScrollIndicator = false
+        }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+            print("landscape")
+            photosCollectionView?.reloadData()
+            
+        } else {
+            print("portrait")
+            photosCollectionView?.reloadData()
         }
     }
 
@@ -84,7 +96,7 @@ class AddFilterViewController: UIViewController, AddFilterDisplayLogic, AddFilte
 
 }
 
-extension AddFilterViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension AddFilterViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
@@ -94,11 +106,26 @@ extension AddFilterViewController: UICollectionViewDelegate, UICollectionViewDat
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 10
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+    }
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+
+        if let view = photosCollectionView{
+            let layaut = view.collectionViewLayout as! UICollectionViewFlowLayout
+            let cellWitdhIncludingSpacing = view.bounds.width + layaut.minimumLineSpacing
+
+            var offset = targetContentOffset.pointee
+            let index = offset.x / cellWitdhIncludingSpacing
+            let roundedIndex = round(index)
+
+            offset = CGPoint.init(x: roundedIndex * cellWitdhIncludingSpacing, y: 0)
+            targetContentOffset.pointee = offset
+        }
     }
 
 }
